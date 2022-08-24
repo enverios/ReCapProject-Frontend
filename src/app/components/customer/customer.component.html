@@ -1,0 +1,29 @@
+
+<div  class="spinner-border text-success" role="status" *ngIf="dataLoaded == false">
+    <span class="visually-hidden">Loading...</span> -->
+   </div>
+  <table class="table table-success table-striped-columns">
+    <thead>
+        <tr>
+            <td>Araba Adı</td>
+        <td>Adı</td>
+        <td>Soyadı</td>
+        <td>Şirket Adı</td>
+       
+        </tr>
+       
+
+
+    </thead>  
+    
+    <tr *ngFor="let customer of customers">
+        <td>{{customer.firstName}}</td>
+        <td>{{customer.lastName}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.componyName}}</td>
+        
+
+
+
+    </tr>
+  </table>

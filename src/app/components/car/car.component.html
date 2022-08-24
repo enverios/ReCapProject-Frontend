@@ -1,0 +1,37 @@
+
+  <div class="spinner-border text-success" role="status" *ngIf="dataLoaded == false">
+    <span class="visually-hidden">Loading...</span> -->
+</div>
+
+
+<div class="col-sm-12" >
+    <div class="card col-3 m-4 me-5  p-0 inputt" style="float: left;padding: 30px  ; border: 4px solid #159ea1;"
+    *ngFor="let carDetailDto of carDetailsDto">
+    <div></div>
+        <img  *ngIf="carDetailDto.imagePath != null"
+        src="https://localhost:44353/uploads/Images/{{
+          carDetailDto.imagePath
+        }}"
+        >
+     
+    
+        
+        <img
+        *ngIf="carDetailDto.imagePath == null"
+        
+          src="https://localhost:44353/uploads/default.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+     
+        <h5 class="card-title">{{carDetailDto.carName}}</h5>
+        <p class="card-text">{{carDetailDto.brandName}}</p>
+        <p class="card-text">{{carDetailDto.modelYear}}</p>
+        <p class="card-text">{{carDetailDto.dailyPrice}}</p>
+
+        <a routerLink="/cars/{{ carDetailDto.carId }}"  class="btn btn" style="background-color: darkcyan;">Bilgi</a>
+    </div>
+</div>
+
+
+

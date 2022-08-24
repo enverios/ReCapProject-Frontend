@@ -1,0 +1,15 @@
+<div class="spinner-border text-success" role="status" *ngIf="dataLoaded == false">
+  <span class="visually-hidden">Loading...</span> -->
+</div>
+
+<div class="bg-info text-white btn w-100 mt-1 mb-1">Markalar</div>
+<ul class="list-group">
+
+  <li routerLink="/cars"
+   [class]="getAllBrandClass()"
+   (click) = "clearCurrentBrand()">
+    Tüm Arabalar
+  </li>
+  <li (click)="setCurrentBrand(brand)" *ngFor="let brand of brands" routerLink="/cars/brand/{{brand.brandId}}"
+    [class]="getCurrentBrandClass(brand)">{{ brand.brandName }}</li>
+</ul>
